@@ -101,7 +101,8 @@ const config: Config = {
       title: 'wz-cch',
       logo: {
         alt: 'wz-cch Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.jpg',
+        style: { borderRadius: '50%' },
       },
       items: [
         {
