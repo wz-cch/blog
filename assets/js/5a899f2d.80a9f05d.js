@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktmp_docusaurus_temp=self.webpackChunktmp_docusaurus_temp||[]).push([["3384"],{4067(u){u.exports=JSON.parse('{"name":"docusaurus-plugin-content-blog","id":"life"}')}}]);

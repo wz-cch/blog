@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktmp_docusaurus_temp=self.webpackChunktmp_docusaurus_temp||[]).push([["7284"],{452(s){s.exports=JSON.parse('{"blogBasePath":"/blog/life","blogTitle":"\u9592\u804A","authorsListPath":"/blog/life/authors"}')}}]);

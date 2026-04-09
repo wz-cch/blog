@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>wz-cch Blog</title>
+        <link>https://wz-cch.github.io/blog/life</link>
+        <description>wz-cch Blog</description>
+        <lastBuildDate>Thu, 09 Apr 2026 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>zh-Hant</language>
+        <item>
+            <title><![CDATA[開張了]]></title>
+            <link>https://wz-cch.github.io/blog/life/hello</link>
+            <guid>https://wz-cch.github.io/blog/life/hello</guid>
+            <pubDate>Thu, 09 Apr 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[部落格終於開起來了。]]></description>
+            <content:encoded><![CDATA[<p>部落格終於開起來了。</p>
+<p>斷斷續續想做這件事很久，每次都覺得「等有時間再說」，結果等到 AI 幫我半天就把架子搭好，才驚覺原來卡點從來不是技術。</p>
+<p>這個閒聊版塊是給自己放低壓力的空間。沒有字數要求，沒有結論要求，想到什麼寫什麼。</p>
+<p>之後大概會出現的內容：</p>
+<ul>
+<li class="">股票回測的好玩實驗（但不是投資建議）</li>
+<li class="">生成 AI 的各種奇怪用法</li>
+<li class="">偶爾的技術碎念</li>
+</ul>
+<p>先這樣。</p>]]></content:encoded>
+            <category>隨筆</category>
+        </item>
+    </channel>
+</rss>

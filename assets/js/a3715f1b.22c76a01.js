@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktmp_docusaurus_temp=self.webpackChunktmp_docusaurus_temp||[]).push([["1496"],{3542(s){s.exports=JSON.parse('{"tags":[{"label":"\u96A8\u7B46","permalink":"/blog/life/tags/\u96A8\u7B46","count":1}]}')}}]);

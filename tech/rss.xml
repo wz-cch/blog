@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="rss.xsl"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>wz-cch Blog</title>
+        <link>https://wz-cch.github.io/blog/tech</link>
+        <description>wz-cch Blog</description>
+        <lastBuildDate>Thu, 09 Apr 2026 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>zh-Hant</language>
+        <item>
+            <title><![CDATA[Vibe Coding 的坑：從 prototype 到 production 差在哪]]></title>
+            <link>https://wz-cch.github.io/blog/tech/vibe-coding-prototype-to-production</link>
+            <guid>https://wz-cch.github.io/blog/tech/vibe-coding-prototype-to-production</guid>
+            <pubDate>Thu, 09 Apr 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[「Vibe Coding 讓我半天做完以前要一週的事。」]]></description>
+            <content:encoded><![CDATA[<p>「Vibe Coding 讓我半天做完以前要一週的事。」</p>
+<p>這句話我說過，現在還是這樣說——但前提是你知道它的邊界在哪裡。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="問題的起點">問題的起點<a href="https://wz-cch.github.io/blog/tech/vibe-coding-prototype-to-production#%E5%95%8F%E9%A1%8C%E7%9A%84%E8%B5%B7%E9%BB%9E" class="hash-link" aria-label="問題的起點的直接連結" title="問題的起點的直接連結" translate="no">​</a></h2>
+<p>去年底我開始把 AI 寫程式的工作流程正式帶進專案。起初是真的爽：prompt 下去，component 出來，整個 API 半小時內架好。然後我就把它推上 staging 了。</p>
+<p>然後就開始踩坑。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="vibe-coding-擅長什麼">Vibe Coding 擅長什麼<a href="https://wz-cch.github.io/blog/tech/vibe-coding-prototype-to-production#vibe-coding-%E6%93%85%E9%95%B7%E4%BB%80%E9%BA%BC" class="hash-link" aria-label="Vibe Coding 擅長什麼的直接連結" title="Vibe Coding 擅長什麼的直接連結" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>結構明確的 CRUD</strong>：給定 schema，AI 能生出八九不離十的 CRUD layer</li>
+<li class=""><strong>測試案例生成</strong>：給定 spec，生 unit test 非常快</li>
+<li class=""><strong>樣板程式碼</strong>：middleware、validator、DTO mapping——這些機械性的工作 AI 很穩</li>
+<li class=""><strong>快速試概念</strong>：想試一個新 DB、新 framework，prototype 速度快很多</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="vibe-coding-不擅長什麼">Vibe Coding 不擅長什麼<a href="https://wz-cch.github.io/blog/tech/vibe-coding-prototype-to-production#vibe-coding-%E4%B8%8D%E6%93%85%E9%95%B7%E4%BB%80%E9%BA%BC" class="hash-link" aria-label="Vibe Coding 不擅長什麼的直接連結" title="Vibe Coding 不擅長什麼的直接連結" translate="no">​</a></h2>
+<p>這才是重點。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-系統邊界與一致性">1. 系統邊界與一致性<a href="https://wz-cch.github.io/blog/tech/vibe-coding-prototype-to-production#1-%E7%B3%BB%E7%B5%B1%E9%82%8A%E7%95%8C%E8%88%87%E4%B8%80%E8%87%B4%E6%80%A7" class="hash-link" aria-label="1. 系統邊界與一致性的直接連結" title="1. 系統邊界與一致性的直接連結" translate="no">​</a></h3>
+<p>AI 生出來的程式碼往往每個 function 都是對的，但放在一起就有問題：</p>
+<ul>
+<li class="">錯誤處理策略不一致</li>
+<li class="">日誌格式到處不同</li>
+<li class="">有些地方用 panic，有些 return error</li>
+</ul>
+<p>在 prototype 看不出來，到 production 要 debug 時才痛。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-效能邊界">2. 效能邊界<a href="https://wz-cch.github.io/blog/tech/vibe-coding-prototype-to-production#2-%E6%95%88%E8%83%BD%E9%82%8A%E7%95%8C" class="hash-link" aria-label="2. 效能邊界的直接連結" title="2. 效能邊界的直接連結" translate="no">​</a></h3>
+<p>AI 不知道你的資料量。它生出 <code>SELECT * FROM events</code> 很正常，但你的 events 表有三億行。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-安全性假設">3. 安全性假設<a href="https://wz-cch.github.io/blog/tech/vibe-coding-prototype-to-production#3-%E5%AE%89%E5%85%A8%E6%80%A7%E5%81%87%E8%A8%AD" class="hash-link" aria-label="3. 安全性假設的直接連結" title="3. 安全性假設的直接連結" translate="no">​</a></h3>
+<p>AI 生的 code 預設是「功能正確」，不是「安全正確」。SQL injection、過度暴露欄位、未驗證輸入——需要你自己把關。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="我的實際工作流程">我的實際工作流程<a href="https://wz-cch.github.io/blog/tech/vibe-coding-prototype-to-production#%E6%88%91%E7%9A%84%E5%AF%A6%E9%9A%9B%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B" class="hash-link" aria-label="我的實際工作流程的直接連結" title="我的實際工作流程的直接連結" translate="no">​</a></h2>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#000000"><span class="token plain">給 AI：有明確範圍的任務（一個 function、一個 struct）</span><br></div><div class="token-line" style="color:#000000"><span class="token plain">      ↓</span><br></div><div class="token-line" style="color:#000000"><span class="token plain">自己 review：邏輯、邊界處理、命名</span><br></div><div class="token-line" style="color:#000000"><span class="token plain">      ↓</span><br></div><div class="token-line" style="color:#000000"><span class="token plain">整合：確認和現有 codebase 風格一致</span><br></div><div class="token-line" style="color:#000000"><span class="token plain">      ↓</span><br></div><div class="token-line" style="color:#000000"><span class="token plain">測試：至少跑一遍 integration test</span><br></div></code></pre></div></div>
+<p>不是「AI 寫，我貼上」。是「AI 起草，我負責」。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="結論">結論<a href="https://wz-cch.github.io/blog/tech/vibe-coding-prototype-to-production#%E7%B5%90%E8%AB%96" class="hash-link" aria-label="結論的直接連結" title="結論的直接連結" translate="no">​</a></h2>
+<p>Vibe Coding 的真實價值是<strong>降低啟動摩擦力</strong>，讓你更快把概念落地。但它不能替代對系統的理解，也不能替代你對 production 環境的責任感。</p>
+<p>把它當工具，不要當隊友。</p>]]></content:encoded>
+            <category>Vibe Coding</category>
+            <category>架構設計</category>
+            <category>AI應用</category>
+        </item>
+    </channel>
+</rss>

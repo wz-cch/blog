@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktmp_docusaurus_temp=self.webpackChunktmp_docusaurus_temp||[]).push([["9996"],{7257(e){e.exports=JSON.parse('{"metadata":{"permalink":"/blog/tech","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"\u6DF1\u5EA6\u6587\uFF0C\u6709\u7ACB\u5834\uFF0C\u6709\u7D50\u8AD6","blogTitle":"\u6280\u8853\u6587\u7AE0"}}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktmp_docusaurus_temp=self.webpackChunktmp_docusaurus_temp||[]).push([["1066"],{2809(e){e.exports=JSON.parse('{"metadata":{"permalink":"/blog/life","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"\u7D14\u597D\u73A9\uFF0C\u7121\u58D3\u529B","blogTitle":"\u9592\u804A"}}')}}]);

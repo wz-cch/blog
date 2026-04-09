@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://wz-cch.github.io/blog/life</id>
+    <title>wz-cch Blog</title>
+    <updated>2026-04-09T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://wz-cch.github.io/blog/life"/>
+    <subtitle>wz-cch Blog</subtitle>
+    <icon>https://wz-cch.github.io/blog/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[開張了]]></title>
+        <id>https://wz-cch.github.io/blog/life/hello</id>
+        <link href="https://wz-cch.github.io/blog/life/hello"/>
+        <updated>2026-04-09T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[部落格終於開起來了。]]></summary>
+        <content type="html"><![CDATA[<p>部落格終於開起來了。</p>
+<p>斷斷續續想做這件事很久，每次都覺得「等有時間再說」，結果等到 AI 幫我半天就把架子搭好，才驚覺原來卡點從來不是技術。</p>
+<p>這個閒聊版塊是給自己放低壓力的空間。沒有字數要求，沒有結論要求，想到什麼寫什麼。</p>
+<p>之後大概會出現的內容：</p>
+<ul>
+<li class="">股票回測的好玩實驗（但不是投資建議）</li>
+<li class="">生成 AI 的各種奇怪用法</li>
+<li class="">偶爾的技術碎念</li>
+</ul>
+<p>先這樣。</p>]]></content>
+        <author>
+            <name>wz-cch</name>
+            <uri>https://www.linkedin.com/in/chien-hsiang-chen-2378b1255/</uri>
+        </author>
+        <category label="隨筆" term="隨筆"/>
+    </entry>
+</feed>
