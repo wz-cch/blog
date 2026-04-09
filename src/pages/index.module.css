@@ -1,0 +1,177 @@
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #2E86AB 0%, #1B6A8A 60%, #1A1A2E 100%);
+  color: #fff;
+  padding: 6rem 1rem 5rem;
+  text-align: center;
+}
+
+.heroInner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.heroName {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff !important;
+  margin-bottom: 0.25rem;
+}
+
+.heroTagline {
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.75rem;
+}
+
+.heroSubtitle {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 2rem;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Section */
+.section {
+  padding: 4rem 0;
+}
+
+.sectionAlt {
+  background-color: var(--ifm-background-surface-color);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.seeAll {
+  font-size: 0.9rem;
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.seeAll:hover {
+  text-decoration: underline;
+}
+
+/* Post grid */
+.postGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.postCard {
+  display: block;
+  background: var(--ifm-card-background-color, var(--ifm-background-color));
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-decoration: none !important;
+  transition: box-shadow 0.2s, transform 0.2s;
+  color: inherit;
+}
+
+.postCard:hover {
+  box-shadow: 0 4px 16px rgba(46, 134, 171, 0.15);
+  transform: translateY(-2px);
+  text-decoration: none !important;
+}
+
+.postCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.postDate {
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
+  margin: 0;
+}
+
+.postTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.postTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  background: rgba(246, 174, 45, 0.15);
+  border: 1px solid rgba(246, 174, 45, 0.5);
+  border-radius: 4px;
+  color: var(--ifm-font-color-base);
+}
+
+/* About section */
+.aboutSection {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.aboutText {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--ifm-font-color-base);
+  margin-bottom: 1.5rem;
+}
+
+.techTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.techTag {
+  font-size: 0.85rem;
+  padding: 4px 12px;
+  background: rgba(46, 134, 171, 0.1);
+  border: 1px solid rgba(46, 134, 171, 0.4);
+  border-radius: 20px;
+  color: var(--ifm-color-primary);
+  font-weight: 500;
+}
+
+.aboutButtons {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .heroName {
+    font-size: 2rem;
+  }
+
+  .heroTagline {
+    font-size: 1.1rem;
+  }
+
+  .postGrid {
+    grid-template-columns: 1fr;
+  }
+}
